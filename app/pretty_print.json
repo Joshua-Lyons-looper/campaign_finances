@@ -1,0 +1,577 @@
+{
+  "state": "NC",
+  "office": "S",
+  "cycle": 2022,
+  "candidates": [
+    {
+      "candidate_id": 4,
+      "fec_candidate_id": "S2NC00497",
+      "name": "BEASLEY, CHERI",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 38948343.76,
+        "spent": 38900975.97,
+        "funding_sources": {
+          "individuals": 35250751.45,
+          "other_committees": 1110417.04,
+          "other": 2587175.27
+        }
+      },
+      "outside_spending": {
+        "support": 6206112.7,
+        "oppose": 48425881.53
+      }
+    },
+    {
+      "candidate_id": 11,
+      "fec_candidate_id": "S2NC00505",
+      "name": "BUDD, THEODORE P",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 14904162.55,
+        "spent": 15702973.48,
+        "funding_sources": {
+          "individuals": 10567966.55,
+          "other_committees": 1440927.09,
+          "other": 2895268.91
+        }
+      },
+      "outside_spending": {
+        "support": 22275239.6,
+        "oppose": 17260979.9
+      }
+    },
+    {
+      "candidate_id": 38,
+      "fec_candidate_id": "S2NC00489",
+      "name": "MCCRORY, PATRICK LLOYD",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 4646398.58,
+        "spent": 4585480.42,
+        "funding_sources": {
+          "individuals": 4583851.64,
+          "other_committees": 47173.64,
+          "other": 15373.3
+        }
+      },
+      "outside_spending": {
+        "support": 469917.63,
+        "oppose": 6196273.43
+      }
+    },
+    {
+      "candidate_id": 48,
+      "fec_candidate_id": "S2NC00307",
+      "name": "WALKER, BRADLEY MARK MR.",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 835232.16,
+        "spent": 1650776.54,
+        "funding_sources": {
+          "individuals": 784935.59,
+          "other_committees": 49000,
+          "other": 1296.57
+        }
+      },
+      "outside_spending": {
+        "support": 161391.5,
+        "oppose": 339675.89
+      }
+    },
+    {
+      "candidate_id": 18,
+      "fec_candidate_id": "S2NC00588",
+      "name": "EASTMAN, MAJORIE K",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 855054.67,
+        "spent": 855054.67,
+        "funding_sources": {
+          "individuals": 590773.88,
+          "other_committees": 28525,
+          "other": 235755.79
+        }
+      },
+      "outside_spending": {
+        "support": 2011320,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 13,
+      "fec_candidate_id": "S4NC00089",
+      "name": "BURR, RICHARD M",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 154374,
+        "spent": 220943.35,
+        "funding_sources": {
+          "individuals": 57874,
+          "other_committees": 96500,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 302.48,
+        "oppose": 861.86
+      }
+    },
+    {
+      "candidate_id": 40,
+      "fec_candidate_id": "S2NC00471",
+      "name": "NEWTON, EVERETTE (RETT) S.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 216484.27,
+        "spent": 191776.27,
+        "funding_sources": {
+          "individuals": 140145,
+          "other_committees": 6339.27,
+          "other": 70000
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 28,
+      "fec_candidate_id": "S2NC00562",
+      "name": "HOH, MATTHEW PATRICK MR",
+      "party": "GRE",
+      "candidate_finances": {
+        "receipts": 193242.25,
+        "spent": 185356.84,
+        "funding_sources": {
+          "individuals": 187911.68,
+          "other_committees": 550,
+          "other": 4780.57
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 50,
+      "fec_candidate_id": "S2NC00406",
+      "name": "WATKINS, RICHARD LEE DR.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 108717.02,
+        "spent": 108684.7,
+        "funding_sources": {
+          "individuals": 99231.24,
+          "other_committees": 0,
+          "other": 9485.78
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 22,
+      "fec_candidate_id": "S2NC00778",
+      "name": "GADDY, SUSAN",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 85010.97,
+        "spent": 85010.97,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 85010.97
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 27,
+      "fec_candidate_id": "S2NC00521",
+      "name": "HARPER JR., KENNETH JABARI",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 36772.96,
+        "spent": 34065.6,
+        "funding_sources": {
+          "individuals": 26827.96,
+          "other_committees": 0,
+          "other": 9945
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 15,
+      "fec_candidate_id": "S2NC00745",
+      "name": "COLON, ROBERT",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 23601.26,
+        "spent": 23601.26,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 23601.26
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 33,
+      "fec_candidate_id": "S2NC00679",
+      "name": "LEWIS, MICHELLE ESTELLE",
+      "party": "UN",
+      "candidate_finances": {
+        "receipts": 18674.86,
+        "spent": 18450.41,
+        "funding_sources": {
+          "individuals": 18674.86,
+          "other_committees": 0,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 6,
+      "fec_candidate_id": "S2NC00349",
+      "name": "BORGHESE, RENE",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 13740,
+        "spent": 13740,
+        "funding_sources": {
+          "individuals": 12950,
+          "other_committees": 0,
+          "other": 790
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 2,
+      "fec_candidate_id": "S2NC00711",
+      "name": "ANTOINE, GREGORY DR.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 11191.48,
+        "spent": 11047.17,
+        "funding_sources": {
+          "individuals": 7410,
+          "other_committees": 0,
+          "other": 3781.48
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 31,
+      "fec_candidate_id": "S2NC00398",
+      "name": "LAGRONE, TOBIAS EVERETT DR.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 6916.24,
+        "spent": 6700.6,
+        "funding_sources": {
+          "individuals": 5750,
+          "other_committees": 0,
+          "other": 1166.24
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 39,
+      "fec_candidate_id": "S2NC00612",
+      "name": "MOSS, CHARLES KENNETH",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 6355.63,
+        "spent": 6355.63,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 6355.63
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 24,
+      "fec_candidate_id": "S2NC00448",
+      "name": "GRIFFITHS, BENJAMIN",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 5086.12,
+        "spent": 5086.12,
+        "funding_sources": {
+          "individuals": 3530.12,
+          "other_committees": 0,
+          "other": 1556
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 10,
+      "fec_candidate_id": "S2NC00596",
+      "name": "BRYANT, LEONARD L",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 6627.26,
+        "spent": 4836.26,
+        "funding_sources": {
+          "individuals": 50,
+          "other_committees": 0,
+          "other": 6577.26
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 9,
+      "fec_candidate_id": "S2NC00273",
+      "name": "BRIAN, LEE ANDREA MS",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 4019.44,
+        "spent": 4727.33,
+        "funding_sources": {
+          "individuals": 40,
+          "other_committees": 0,
+          "other": 3979.44
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 16,
+      "fec_candidate_id": "S2NC00539",
+      "name": "COOKE, JOHN MARTIN MR. JR.",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 9771.14,
+        "spent": 4320.8,
+        "funding_sources": {
+          "individuals": 6695,
+          "other_committees": 0,
+          "other": 3076.14
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 5,
+      "fec_candidate_id": "S2NC00554",
+      "name": "BOOKER, PATRICE CHRELLE",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 6439.54,
+        "spent": 4001.14,
+        "funding_sources": {
+          "individuals": 6439.54,
+          "other_committees": 0,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 52,
+      "fec_candidate_id": "S8NC00270",
+      "name": "WILLIAMS, MARCUS W.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 3786.77,
+        "spent": 3786.77,
+        "funding_sources": {
+          "individuals": 3786.77,
+          "other_committees": 0,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 45,
+      "fec_candidate_id": "S2NC00547",
+      "name": "SIBHATU, LICHIA WOLDEGABREAL",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 8360.59,
+        "spent": 2879.45,
+        "funding_sources": {
+          "individuals": 2173.14,
+          "other_committees": 0,
+          "other": 6187.45
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 3,
+      "fec_candidate_id": "S2NC00513",
+      "name": "BANWART, JENNIFER ALEXIS",
+      "party": "REP",
+      "candidate_finances": {
+        "receipts": 4513.27,
+        "spent": 2681.4,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 4513.27
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 19,
+      "fec_candidate_id": "S2NC00372",
+      "name": "EDWARDS, AVA MARIE",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 2341.95,
+        "spent": 1483.3,
+        "funding_sources": {
+          "individuals": 782,
+          "other_committees": 0,
+          "other": 1559.95
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 41,
+      "fec_candidate_id": "S2NC00422",
+      "name": "RHINEHARDT, KIMREY WOODARD MRS.",
+      "party": "UN",
+      "candidate_finances": {
+        "receipts": 4870.25,
+        "spent": 1044.81,
+        "funding_sources": {
+          "individuals": 4010,
+          "other_committees": 0,
+          "other": 860.25
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 51,
+      "fec_candidate_id": "S2NC00661",
+      "name": "WHITE, MARC MICHAEL",
+      "party": "UN",
+      "candidate_finances": {
+        "receipts": 784,
+        "spent": 784,
+        "funding_sources": {
+          "individuals": 210,
+          "other_committees": 0,
+          "other": 574
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 14,
+      "fec_candidate_id": "S2NC00570",
+      "name": "CARR, JAMES LESTER MR. JR.",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 0,
+        "spent": 0,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    },
+    {
+      "candidate_id": 30,
+      "fec_candidate_id": "S2NC00620",
+      "name": "JOHNSON, CONSTANCE LOV",
+      "party": "DEM",
+      "candidate_finances": {
+        "receipts": 0,
+        "spent": 0,
+        "funding_sources": {
+          "individuals": 0,
+          "other_committees": 0,
+          "other": 0
+        }
+      },
+      "outside_spending": {
+        "support": 0,
+        "oppose": 0
+      }
+    }
+  ]
+}
