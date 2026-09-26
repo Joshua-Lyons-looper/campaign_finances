@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Campaign Spending API
 
 Minimal FastAPI project with a SQLite connector. Requires Python 3.10+.
@@ -26,3 +27,6 @@ receive a SQLite connection. Each request has its own connection, with foreign
 keys enabled, automatic commit on success, rollback on error, and cleanup.
 Use SQL placeholders for values, for example `db.execute("SELECT ?", (value,))`.
 Add your tables and routes as needed.
+=======
+# campaign_finances
+>>>>>>> 063b4ec2a264fabf04ff0a7d946e57bf1fe378d6
