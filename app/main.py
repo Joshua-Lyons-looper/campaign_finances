@@ -18,6 +18,7 @@ from app.schemas.finance import CandidateFinanceResponse
 from app.schemas.independent_expenditure import (
     IndependentExpenditureSummary,
 )
+from app.services.fec_bulk_importer import FECBulkImporter
 
 Base.metadata.create_all(bind=engine)
 
@@ -320,3 +321,86 @@ def get_finance_summary(state: str,office: str,cycle: int,db: Session = Depends(
             "cycle": cycle,
             "candidates": results,
         }
+
+@app.get("/bulk/datasets")
+def get_bulk_datasets():
+
+    importer = FECBulkImporter()
+
+    return {
+        "datasets": importer.list_datasets()
+    }
+
+@app.get("/bulk/candidates")
+def get_bulk_candidates(cycle: int,state: str | None = None,office: str | None = None,):
+    importer = FECBulkImporter()
+    candidates = importer.read_candidates(cycle=cycle,)
+    candidates = [
+        candidate
+        for candidate in candidates
+        if candidate["election_year"] == str(cycle)
+    ]
+    if state:
+        candidates = [
+            candidate
+            for candidate in candidates
+            if candidate["state"] == state.upper()
+        ]
+    if office:
+        candidates = [
+            candidate
+            for candidate in candidates
+            if candidate["office"] == office.upper()
+        ]
+    return {
+        "cycle": cycle,
+        "count": len(candidates),
+        "candidates": candidates,
+    }
+
+@app.get("/bulk/candidates/finances")
+def get_bulk_candidate_finances(
+    cycle: int,
+    state: str,
+    office: str,
+):
+
+    importer = FECBulkImporter()
+
+    candidates = importer.read_candidates(
+        cycle=cycle,
+    )
+
+    finances = importer.read_candidate_finances(
+        cycle=cycle,
+    )
+
+    results = []
+
+    for candidate in candidates:
+
+        if candidate["election_year"] != str(cycle):
+            continue
+
+        if candidate["state"] != state.upper():
+            continue
+
+        if candidate["office"] != office.upper():
+            continue
+
+        finance = finances.get(
+            candidate["candidate_id"]
+        )
+
+        results.append({
+            **candidate,
+            "finances": finance,
+        })
+
+    return {
+        "cycle": cycle,
+        "state": state.upper(),
+        "office": office.upper(),
+        "count": len(results),
+        "candidates": results,
+    }
