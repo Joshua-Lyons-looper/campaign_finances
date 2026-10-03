@@ -1,0 +1,187 @@
+{
+  "state": "NC",
+  "office": "H",
+  "from_cycle": 2020,
+  "to_cycle": 2022,
+  "available": true,
+  "missing": {
+    "from_cycle": false,
+    "to_cycle": false
+  },
+  "data_coverage": {
+    "2020": {
+      "election_results": true,
+      "candidate_finances": true,
+      "independent_expenditures": true
+    },
+    "2022": {
+      "election_results": true,
+      "candidate_finances": true,
+      "independent_expenditures": true
+    }
+  },
+  "parties": {
+    "GRE": {
+      "from_vote_share": 0.0010334623580632507,
+      "to_vote_share": 0,
+      "vote_share_change_percentage_points": -0.10334623580632507,
+      "candidate_spending": {
+        "from": null,
+        "to": null,
+        "change": null,
+        "percent_change": null,
+        "per_percentage_point_change": null,
+        "spending_change_per_percentage_point_change": null
+      },
+      "outside_spending": {
+        "from": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "to": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "change": null,
+        "percent_change": null
+      }
+    },
+    "W": {
+      "from_vote_share": 5.521314433410788e-05,
+      "to_vote_share": 2.9251343766844453e-05,
+      "vote_share_change_percentage_points": -0.0025961800567263424,
+      "candidate_spending": {
+        "from": 0.0,
+        "to": null,
+        "change": null,
+        "percent_change": null,
+        "per_percentage_point_change": null,
+        "spending_change_per_percentage_point_change": null
+      },
+      "outside_spending": {
+        "from": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "to": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "change": null,
+        "percent_change": null
+      }
+    },
+    "R": {
+      "from_vote_share": 0.4941644025834493,
+      "to_vote_share": 0.5203830011400047,
+      "vote_share_change_percentage_points": 2.6218598556555395,
+      "candidate_spending": {
+        "from": 23534255.67,
+        "to": 20352404.92,
+        "change": -3181850.75,
+        "percent_change": -13.52008236256235,
+        "per_percentage_point_change": 7762583.067168294,
+        "spending_change_per_percentage_point_change": -1213585.3650363958
+      },
+      "outside_spending": {
+        "from": {
+          "support": 2026886.94,
+          "oppose": 4697204.26,
+          "total": 6724091.2
+        },
+        "to": {
+          "support": 3016718.32,
+          "oppose": 9918928.51,
+          "total": 12935646.83
+        },
+        "change": 6211555.63,
+        "percent_change": 92.37762316489699
+      }
+    },
+    "D": {
+      "from_vote_share": 0.4996479692549174,
+      "to_vote_share": 0.4773739526356923,
+      "vote_share_change_percentage_points": -2.2274016619225065,
+      "candidate_spending": {
+        "from": 13401303.01,
+        "to": 21500173.01,
+        "change": 8098870.0,
+        "percent_change": 60.43345183641214,
+        "per_percentage_point_change": -9652580.12398305,
+        "spending_change_per_percentage_point_change": -3636016.861462577
+      },
+      "outside_spending": {
+        "from": {
+          "support": 546087.47,
+          "oppose": 1215314.84,
+          "total": 1761402.31
+        },
+        "to": {
+          "support": 2128993.99,
+          "oppose": 3434799.0,
+          "total": 5563792.99
+        },
+        "change": 3802390.68,
+        "percent_change": 215.87292456769856
+      }
+    },
+    "CON": {
+      "from_vote_share": 0.0014188275695380444,
+      "to_vote_share": 0,
+      "vote_share_change_percentage_points": -0.14188275695380445,
+      "candidate_spending": {
+        "from": null,
+        "to": null,
+        "change": null,
+        "percent_change": null,
+        "per_percentage_point_change": null,
+        "spending_change_per_percentage_point_change": null
+      },
+      "outside_spending": {
+        "from": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "to": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "change": null,
+        "percent_change": null
+      }
+    },
+    "LIB": {
+      "from_vote_share": 0.0036801250896978848,
+      "to_vote_share": 0.0022137948805361824,
+      "vote_share_change_percentage_points": -0.14663302091617023,
+      "candidate_spending": {
+        "from": 54.4,
+        "to": 37730.87,
+        "change": 37676.47,
+        "percent_change": 69258.2169117647,
+        "per_percentage_point_change": -257314.9606020233,
+        "spending_change_per_percentage_point_change": -256943.96640398997
+      },
+      "outside_spending": {
+        "from": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "to": {
+          "support": null,
+          "oppose": null,
+          "total": null
+        },
+        "change": null,
+        "percent_change": null
+      }
+    }
+  }
+}

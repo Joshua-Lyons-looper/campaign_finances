@@ -1,0 +1,200 @@
+--- a/app/services/analytics_service.py
++++ b/app/services/analytics_service.py
+@@ -1,4 +1,4 @@
+-from sqlalchemy import select
++from sqlalchemy import select, union
+ from sqlalchemy.orm import Session
+ from app.models.candidate import Candidate
+ from app.models.candidate_finance import CandidateFinance
+@@ -26,6 +26,7 @@
+ 
+         party_votes = {}
+         total_votes = 0
++        usable_rows = 0
+ 
+         for result in results:
+             if result.general_votes is None:
+@@ -54,6 +55,10 @@
+                 )
+                 continue
+ 
++            if votes < 0:
++                continue
++
++            usable_rows += 1
+             total_votes += votes
+ 
+             party = result.party or "OTHER"
+@@ -70,7 +75,7 @@
+             vote_share = (
+                 votes / total_votes
+                 if total_votes
+-                else 0
++                else None
+             )
+ 
+             parties[party] = {
+@@ -81,6 +86,9 @@
+         return {
+             "cycle": cycle,
+             "state": state.upper(),
++            "office": office,
++            "available": usable_rows > 0,
++            "vote_shares_available": total_votes > 0,
+             "total_votes": total_votes,
+             "parties": parties,
+         }
+@@ -100,6 +108,27 @@
+             office=office,
+         )
+ 
++        missing = {
++            "from_cycle": not from_data["available"],
++            "to_cycle": not to_data["available"],
++        }
++        available = all(
++            data["vote_shares_available"] for data in (from_data, to_data)
++        )
++        comparison = {
++            "state": state.upper(),
++            "office": office,
++            "from_cycle": from_cycle,
++            "to_cycle": to_cycle,
++            "available": available,
++            "missing": missing,
++            "from_total_votes": from_data["total_votes"] if from_data["available"] else None,
++            "to_total_votes": to_data["total_votes"] if to_data["available"] else None,
++            "parties": {},
++        }
++        if not available:
++            return comparison
++
+         all_parties = (
+             set(from_data["parties"])
+             | set(to_data["parties"])
+@@ -132,15 +161,8 @@
+                 ) * 100,
+             }
+ 
+-        return {
+-            "state": state.upper(),
+-            "office": office,
+-            "from_cycle": from_cycle,
+-            "to_cycle": to_cycle,
+-            "from_total_votes": from_data["total_votes"],
+-            "to_total_votes": to_data["total_votes"],
+-            "parties": parties,
+-        }
++        comparison["parties"] = parties
++        return comparison
+ 
+     def get_state_party_finances(self,cycle: int,state: str,office: str,) -> dict:
+         
+@@ -173,7 +195,7 @@
+ 
+         for result, candidate, finance in rows:
+ 
+-            if finance is None:
++            if finance is None or not self._usable_amounts(finance.receipts, finance.disbursements):
+                 continue
+ 
+             party = result.party or "OTHER"
+@@ -191,6 +213,7 @@
+             "cycle": cycle,
+             "state": state.upper(),
+             "office": office,
++            "available": bool(parties),
+             "parties": parties,
+         }
+ 
+@@ -369,6 +392,20 @@
+             "office": office,
+             "from_cycle": from_cycle,
+             "to_cycle": to_cycle,
++            "available": election_comparison["available"],
++            "missing": election_comparison["missing"],
++            "data_coverage": {
++                str(from_cycle): {
++                    "election_results": not election_comparison["missing"]["from_cycle"],
++                    "candidate_finances": from_finances["available"],
++                    "independent_expenditures": from_outside["available"],
++                },
++                str(to_cycle): {
++                    "election_results": not election_comparison["missing"]["to_cycle"],
++                    "candidate_finances": to_finances["available"],
++                    "independent_expenditures": to_outside["available"],
++                },
++            },
+             "parties": parties,
+         }
+ 
+@@ -401,7 +438,7 @@
+ 
+         for result, candidate, outside_spending in rows:
+ 
+-            if outside_spending is None:
++            if outside_spending is None or not self._usable_amounts(outside_spending.support, outside_spending.oppose):
+                 continue
+ 
+             party = result.party or "OTHER"
+@@ -425,9 +462,38 @@
+             "cycle": cycle,
+             "state": state.upper(),
+             "office": office,
++            "available": bool(parties),
+             "parties": parties,
+         }
+ 
++    @staticmethod
++    def _usable_amounts(*amounts) -> bool:
++        # Explicit numeric zero is usable; absent/non-finite amounts are not.
++        try:
++            return all(value is not None and Decimal(str(value)).is_finite() for value in amounts)
++        except (ValueError, TypeError, ArithmeticError):
++            return False
++
++    def get_data_coverage(self, state: str = "US", office: str | None = None) -> dict:
++        # Include financial-only cycles, even when election results are missing.
++        scopes = union(
++            select(ElectionResult.cycle, ElectionResult.office),
++            select(CandidateFinance.cycle, Candidate.office).join(
++                Candidate, Candidate.id == CandidateFinance.candidate_id),
++            select(OutsideSpending.cycle, Candidate.office).join(
++                Candidate, Candidate.id == OutsideSpending.candidate_id),
++        )
++        coverage = {}
++        for cycle, office_code in sorted(self.db.execute(scopes).all()):
++            if office_code not in {"H", "S"} or (office and office_code != office):
++                continue
++            coverage.setdefault(str(cycle), {})[office_code] = {
++                "election_results": self.get_state_party_totals(cycle, state, office_code)["available"],
++                "candidate_finances": self.get_state_party_finances(cycle, state, office_code)["available"],
++                "independent_expenditures": self.get_state_party_outside_spending(cycle, state, office_code)["available"],
++            }
++        return {"state": state.upper(), "data_coverage": coverage}
++
+     # Backward-compatible House entry points delegate to shared implementations.
+     def get_state_house_party_totals(self, cycle: int, state: str) -> dict:
+         return self.get_state_party_totals(cycle=cycle, state=state, office="H")
+--- a/app/main.py
++++ b/app/main.py
+@@ -1186,4 +1186,17 @@
+     return analytics_service.get_state_house_party_outside_spending(
+         cycle=cycle,
+         state=state,
+-    )
+\ No newline at end of file
++    )
++
++@app.get("/analytics/data-coverage")
++def get_data_coverage(
++    state: str = "US",
++    office: str | None = None,
++    db: Session = Depends(get_db),
++):
++    office_code = None
++    if office is not None:
++        office_code = {"house": "H", "h": "H", "senate": "S", "s": "S"}.get(office.lower())
++        if office_code is None:
++            raise HTTPException(status_code=400, detail="office must be house, senate, H, or S")
++    return AnalyticsService(db).get_data_coverage(state=state, office=office_code)

@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from sqlalchemy import ForeignKey, Integer, Numeric, String
+from sqlalchemy import Integer, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
@@ -14,8 +14,9 @@ class ElectionResult(Base):
         primary_key=True,
     )
 
-    candidate_id: Mapped[int] = mapped_column(
-        ForeignKey("candidates.id"),
+    fec_candidate_id: Mapped[str | None] = mapped_column(
+        String,
+        nullable=True,
         index=True,
     )
 
@@ -24,14 +25,40 @@ class ElectionResult(Base):
         index=True,
     )
 
-    election_type: Mapped[str] = mapped_column(
+    state: Mapped[str] = mapped_column(
+        String(2),
+        index=True,
+    )
+
+    office: Mapped[str] = mapped_column(
+        String(1),
+    )
+
+    district: Mapped[str | None] = mapped_column(
+        String,
+        nullable=True,
+    )
+
+    candidate_name: Mapped[str] = mapped_column(
         String,
     )
 
-    votes: Mapped[int] = mapped_column(
-        Integer,
+    party: Mapped[str | None] = mapped_column(
+        String,
+        nullable=True,
     )
 
-    vote_share: Mapped[Decimal] = mapped_column(
-        Numeric(6, 3),
+    general_votes: Mapped[int | None] = mapped_column(
+        Integer,
+        nullable=True,
+    )
+
+    general_percentage: Mapped[Decimal | None] = mapped_column(
+        Numeric(10, 8),
+        nullable=True,
+    )
+
+    general_winner: Mapped[str | None] = mapped_column(
+        String,
+        nullable=True,
     )

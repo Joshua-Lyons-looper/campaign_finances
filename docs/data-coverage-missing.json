@@ -1,0 +1,24 @@
+{
+  "state": "NC",
+  "office": "H",
+  "from_cycle": 2000,
+  "to_cycle": 2012,
+  "available": false,
+  "missing": {
+    "from_cycle": true,
+    "to_cycle": false
+  },
+  "data_coverage": {
+    "2000": {
+      "election_results": false,
+      "candidate_finances": false,
+      "independent_expenditures": false
+    },
+    "2012": {
+      "election_results": true,
+      "candidate_finances": true,
+      "independent_expenditures": true
+    }
+  },
+  "parties": {}
+}
